@@ -27,7 +27,7 @@ if len(app.Documents) > 0:
         imageWidth=doc.width
 
         # Check image is bigger than desired web size
-        if (imageWidth>maxDim) and (imageHeight>maxDim):
+        if (imageWidth>maxDim) or (imageHeight>maxDim):
             # Check which side is longer and resize accordingly
             if(imageWidth>=imageHeight):
 
