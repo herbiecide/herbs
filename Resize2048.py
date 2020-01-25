@@ -2,7 +2,7 @@
 # 2048 pixels is the maximum dimension for Facebook, Instagram, and Twitter.
 
 from win32com.client import Dispatch, GetActiveObject
-import os
+
 
 
 # Start up Photoshop application
