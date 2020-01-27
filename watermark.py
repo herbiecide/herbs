@@ -29,10 +29,13 @@ if len(app.Documents) > 0:
         watermarkColor.RGB.Green = 225
         watermarkColor.RGB.Blue = 225
 
+
+
         # add a new text layer to document and apply the text color
         newTextLayer = doc.ArtLayers.Add()
         psTextLayer = 2     # from enum PsLayerKind
         newTextLayer.Kind = psTextLayer
+        newTextLayer.TextItem.Font="Roboto" #This must be the PostScript Name
         newTextLayer.TextItem.Contents = "@Herbiecide"
         newTextLayer.TextItem.Position = [imageWidth/2, imageHeight*98/100]
         newTextLayer.TextItem.Size = imageHeight/200
