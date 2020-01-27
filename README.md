@@ -1,6 +1,6 @@
 # herbs
 
-# A simple python scripts to automate some things in photoshop
+# Simple python scripts to automate some things in photoshop
 
 # Resize and export images in photoshop as jpegs for web upload (e.g. facebook/instagram).
 
