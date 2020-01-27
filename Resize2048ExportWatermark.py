@@ -53,10 +53,10 @@ if len(app.Documents) > 0:
             # Check which side is longer and resize accordingly
             if(imageWidth>=imageHeight):
 
-                doc.ResizeImage(maxDim,None, None,None)
+                doc.ResizeImage(maxDim,None, None, 4) #4 is BICUBIC
 
             else:
-                doc.ResizeImage(None, maxDim, None,None)
+                doc.ResizeImage(None, maxDim, None, 4) #4 is BICUBIC
         else:
             print("No need to resize. Image is too small")
 
@@ -68,7 +68,7 @@ else:
 options = Dispatch('Photoshop.ExportOptionsSaveForWeb')
 options.quality = 100
 options.format = 6 #6 is jpg
-options.optimized = True
+options.optimized = False
 
 newName = "web-size_"+doc.name
 newPath = doc.path+newName

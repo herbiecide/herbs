@@ -31,10 +31,10 @@ if len(app.Documents) > 0:
             # Check which side is longer and resize accordingly
             if(imageWidth>=imageHeight):
 
-                doc.ResizeImage(maxDim,None, None,None)
+                doc.ResizeImage(maxDim,None, None, 4)
 
             else:
-                doc.ResizeImage(None, maxDim, None,None)
+                doc.ResizeImage(None, maxDim, None, 4)
         else:
             print("No need to resize. Image is too small")
 
