@@ -1,7 +1,7 @@
 # This script batch resizes images to have a longest edge of 2048 pixels,
 # Adds a simple text watermark at the bottom,
 # Then exports as a jpg.
-# Open each image you want to resize as separate documents in photoshop and 
+# Open each image you want to resize as separate documents in photoshop and
 # it will close them automatically upon completion.
 #
 # 2048 pixels is the maximum dimension for Facebook, Instagram, and Twitter.
@@ -37,6 +37,9 @@ options = Dispatch('Photoshop.ExportOptionsSaveForWeb')
 options.quality = 100
 options.format = 6 #6 is jpg
 options.optimized = False
+
+# Keep track of number of images resized.
+numResized = 0
 
 while len(app.Documents) > 0:
 
@@ -77,10 +80,12 @@ while len(app.Documents) > 0:
         newPath = doc.path+newName
         doc.Export(ExportIn=newPath, ExportAs=2, Options=options)
 
+        numResized = numResized + 1
+
         doc.Close(2)
 
 else:
-    print("All done!")
+    print("All done! "+ str(numResized) +" images resized.")
 
 
 # set the app preference the way it was before the operation
